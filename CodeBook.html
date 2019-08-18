@@ -445,7 +445,10 @@ tidy_data = rbind(training,testing)</code></pre>
 <pre class="r"><code>## Create independent tidy data set with 
 ## the average of each variable for each activity and each subject.
 tidy_data_mean = aggregate(. ~ activity + subject, data = tidy_data, 
-                           drop=TRUE, mean)</code></pre>
+                           drop=TRUE, mean)
+## Save file
+write.table(tidy_data_mean, &quot;Mean_STD_measurments_by_activity_subject.txt&quot;, 
+            row.names=FALSE)</code></pre>
 </div>
 <div id="refence" class="section level2">
 <h2>Refence</h2>

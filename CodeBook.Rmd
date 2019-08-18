@@ -92,6 +92,9 @@ write.table(tidy_data, "Mean_STD_measurments.txt",
 ## the average of each variable for each activity and each subject.
 tidy_data_mean = aggregate(. ~ activity + subject, data = tidy_data, 
                            drop=TRUE, mean)
+## Save file
+write.table(tidy_data_mean, "Mean_STD_measurments_by_activity_subject.txt", 
+            row.names=FALSE)
 ```
 
 ## Refence 
